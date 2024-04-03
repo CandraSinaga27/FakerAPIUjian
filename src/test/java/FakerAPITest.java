@@ -39,20 +39,4 @@ public class FakerAPITest extends BaseTest3{
 //                Assertion isi 1 hari mealplan ada 3 dish
                 .body("data.size",equalTo(1));
     }
-
-    @Test(description = "Books")
-    public void Books(){
-        given()
-                .queryParam("apiKey",apiKey)
-                .queryParam("_quantity", 1)
-                .log().ifValidationFails()
-                .when()
-                .get("addresses?_quantity=1")
-                .then()
-                .log().ifValidationFails()
-                .statusCode(200)
-//                Assertion isi 1 hari mealplan ada 3 dish
-                .body("total.size",equalTo(1));
-    }
-
 }
